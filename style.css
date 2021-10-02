@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #050140;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh
+
+}
+.box{
+    position: relative;
+    width: 300px;
+    margin-left: 30px;
+    height: 400px;  display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 20px;
+    -webkit-box-reflect: below 10px linear-gradient(transparent ,transparent ,transparent,transparent,#444) ;
+
+}
+.box .card{
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 2;
+}
+.box .card h2{
+    margin-top: 30px;
+    color: #cdcdcf;
+    font-size: 35px;
+    position: absolute;
+    z-index: 10;
+    align-self: flex-start;
+
+}
+.card img{
+    transition: 1s;
+}
+.card img:hover{
+    transform: scale(2) rotate(-90deg);
+    cursor: pointer;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 150%;
+    background:linear-gradient(#00ccff,#d400d4);
+    animation: animate 8s linear infinite;
+}
+.box::after{
+    position: absolute;
+    content: '';
+    inset: 4px;
+    background: #0e1538;
+    border-radius: 16px;
+ 
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0);
+        filter: hue-rotate(0);
+    }
+    0%{
+        transform: rotate(360deg);
+         filter: hue-rotate(360deg);
+    }
+
+
+}
+.card .color {
+    display: flex;
+    position: absolute;
+    color: white;
+    bottom: 10%;
+}
+.card .color span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+   cursor: pointer;
+    margin-left: 5px;
+}.card .color span:first-of-type{
+    background-color:#f2e1b8;
+}
+.card .color span:nth-of-type(2){
+    background-color:#5d151a;
+}.card .color span:nth-of-type(3){
+    background-color:#1b4683;
+}
+@media (max-width:767px){
+    body{
+        flex-direction: column;
+        padding: 30px 0;
+    }
+    .box{
+        margin: 30px 0 0 0 ; 
+        -webkit-box-reflect:below 0 linear-gradient(transparent,transparent) ;
+    }
+
+}
