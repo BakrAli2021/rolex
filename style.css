@@ -45,6 +45,7 @@ body{
 }
 .card img{
     transition: 1s;
+    position: absolute;
 }
 .card img:hover{
     transform: scale(2) rotate(-90deg);
@@ -82,21 +83,48 @@ body{
     display: flex;
     position: absolute;
     color: white;
-    bottom: 10%;
+    bottom: 20%;
 }
+
 .card .color span{
     width: 30px;
     height: 30px;
     border-radius: 50%;
    cursor: pointer;
     margin-left: 5px;
-}.card .color span:first-of-type{
+}
+.card .color span:first-of-type{
     background-color:#f2e1b8;
 }
 .card .color span:nth-of-type(2){
     background-color:#5d151a;
 }.card .color span:nth-of-type(3){
     background-color:#1b4683;
+}
+.card a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    border: 1px solid #444;
+    position: relative;
+    bottom: -42%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+.card a::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height:100px;
+    top:-30px;
+    left: -50%;
+    transform: rotate(35deg);
+    transition: .5s;
+    background:linear-gradient(90deg,transparent ,rgba(255,255,255,.4) 50%,transparent 100%,transparent 100%);
+}.card a:hover:before{
+    left: 120%;
 }
 @media (max-width:767px){
     body{
